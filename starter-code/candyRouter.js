@@ -38,10 +38,16 @@ router.put('/:id', function(req,res){
 
 // Delete
 router.delete('/:id', function(req,res){
-	var index = (req.params.id)-1;
-	var newArray = candies.splice(index,1);
+	var current = req.params.id;
+	for(i=0; i<candies.length;i++){
+	if (current==candies[i].id) {
+		candies.splice(i,1);
+
+	}
+}
+res.json(candies);
+
 	console.log("message:deleted");
-	res.json(newArray);
 });
 
 

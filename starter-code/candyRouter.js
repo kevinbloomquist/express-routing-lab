@@ -33,7 +33,14 @@ router.post('/', function(req,res) {
 });
 // edit
 router.put('/:id', function(req,res){
-
+var objId = req.params.id;
+for (i=0; i<candies.length;i++){
+	if(objId == candies[i].id){
+		candies[i].name = req.params.name;
+		candies[i].color = req.params.color;
+	}
+}
+res.json(candies[i]);
 });
 
 // Delete

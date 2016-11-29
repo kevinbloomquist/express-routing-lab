@@ -31,6 +31,18 @@ router.post('/', function(req,res) {
 	candies.push(req.body);
 	res.json(req.body);
 });
+// edit
+router.put('/:id', function(req,res){
+
+});
+
+// Delete
+router.delete('/:id', function(req,res){
+	var index = (req.params.id)-1;
+	var newArray = candies.splice(index,1);
+	console.log("message:deleted");
+	res.json(newArray);
+});
 
 
 module.exports = router;

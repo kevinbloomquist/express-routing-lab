@@ -36,8 +36,8 @@ router.put('/:id', function(req,res){
 var objId = req.params.id;
 for (i=0; i<candies.length;i++){
 	if(objId == candies[i].id){
-		candies[i].name = req.params.name;
-		candies[i].color = req.params.color;
+		candies[i].name = req.body.name;
+		candies[i].color = req.body.color;
 	}
 }
 res.json(candies[i]);
